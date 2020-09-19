@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1= title
+  form(method='POST' action='')
+    .form-row
+        .form-group.col-md-6
+            label(for='fname') First name
+            input#fname.form-control(type='text' name='fname' required='true')
+        .form-group.col-md-6
+            label(for='lname') Last name
+            input#lname.form-control(type='text' name='lname' required='true')
+    .form-group 
+        label(for='username') Username
+        input#username.form-control(type='text' name='username' required='true')
+    .form-group    
+        label(for='password') Password
+        input#password.form-control(type='text' name='password' required='true')
+    .form-group     
+        label(for='confirm-password') Confirm password
+        input#confirm-password.form-control(type='text' name='confirm-password' required='true')
+    button.btn.btn-primary(type='submit') Sign up
+
+    if errors
+        ul
+        for error in errors
+            li!= error.msg
