@@ -2,13 +2,12 @@ extends layout
 
 block content
   h1= title
-  form(method='POST' action='')
-    .form-group    
-        label(for='passcode') Enter the secret passcode
-        input#password.form-control(type='passcode' name='passcode' required='true')
-    button.btn.btn-primary(type='submit') Join
-
-    if errors
-        ul
-        for error in errors
-            li!= error.msg
+  if currentUser
+    form(method='POST' action='')
+      .form-group    
+          label(for='passcode') Enter the secret passcode
+          input#passcode.form-control(type='passcode' name='passcode' required='true')
+      p #{msg}
+      button.btn.btn-primary(type='submit') Join
+  else
+    p You must be logged in before you can join
