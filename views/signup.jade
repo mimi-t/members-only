@@ -6,13 +6,13 @@ block content
     .form-row
         .form-group.col-md-6
             label(for='fname') First name
-            input#fname.form-control(type='text' name='fname' required='true')
+            input#fname.form-control(type='text' name='fname' required='true' value=(user==undefined ? '' : user.fname))
         .form-group.col-md-6
             label(for='lname') Last name
-            input#lname.form-control(type='text' name='lname' required='true')
+            input#lname.form-control(type='text' name='lname' required='true' value=(user==undefined ? '' : user.lname))
     .form-group 
         label(for='username') Username
-        input#username.form-control(type='text' name='username' required='true')
+        input#username.form-control(type='text' name='username' required='true' value=(user==undefined ? '' : user.username))
     .form-group    
         label(for='password') Password
         input#password.form-control(type='password' name='password' required='true')
