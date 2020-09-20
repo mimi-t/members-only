@@ -21,6 +21,7 @@ const indexRouter = require('./routes/index');
 const signupRouter = require('./routes/signup');
 const joinRouter = require('./routes/join');
 const loginRouter = require('./routes/login');
+const createRouter = require('./routes/create');
 
 const app = express();
 
@@ -82,6 +83,7 @@ app.use('/', indexRouter);
 app.use('/signup', signupRouter);
 app.use('/join', joinRouter);
 app.use('/login', loginRouter);
+app.use('/create', createRouter);
 app.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');
