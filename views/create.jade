@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  if currentUser
+    form(method='POST' action='')
+        .form-group
+            label(for='title') Title
+            input#title.form-control(type='text' name='title' required='true' value=(message==undefined ? '' : message.title))
+        .form-group
+            label(for='text') Message
+            textarea#text.form-control(rows='3' name='text' required='true' value=(message==undefined ? '' : message.text))
+    button.btn.btn-primary(type='submit') Create 
+
+    if errors
+        ul
+        for error in errors
+            li!= error.msg
+  
+  else
+    p You must be logged in to view this page
+
