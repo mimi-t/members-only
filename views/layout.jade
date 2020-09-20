@@ -7,6 +7,22 @@ html
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css', integrity='sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z', crossorigin='anonymous')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    nav(class='navbar navbar-expand-lg navbar-light bg-light navbar-collapse')
+      ul(class='navbar-nav mr-auto')
+        li(class='nav-item')
+          a(class='nav-link' href='/') Home
+        if currentUser
+          li(class='nav-item')
+            a(class='nav-link' href='/join') Join
+      ul(class='navbar-nav my-2 my-lg-0')
+        li(class='nav-item')
+          a(class='nav-link' href='/signup') Sign up
+        if currentUser
+          li(class='nav-item')
+            a(class='nav-link' href='/logout') Log out
+        else
+          li(class='nav-item')
+            a(class='nav-link' href='/login') Log in
     block content
     
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js', integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj', crossorigin='anonymous')
