@@ -3,3 +3,5 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  if currentUser
+    a(class='btn btn-primary btn-lg' role='button' href='/create') Create new message
