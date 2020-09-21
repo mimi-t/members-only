@@ -10,11 +10,18 @@ exports.index_get = function (req, res, next) {
                 .exec(callback)
         },
         member_status: function (callback) {
-            User.findById(res.locals.currentUser, 'member')
+            User.findById(res.locals.currentUser)
                 .exec(callback)
         }
     }, function(err, results) {
         if (err) return next(err);
-        res.render('index', { title: 'Chocola', messages: results.messages, isMember: results.member_status });
+        res.render('index', { title: 'Chocola', messages: results.messages, isAuthorised: results.member_status });
+    });
+}
+
+exports.index_delete = function(req,res,next) {
+    Message.findByIdAndDelete(req.body.message_id, function(err) {
+        if (err) return next(err);
+        res.redirect('/');
     });
 }
