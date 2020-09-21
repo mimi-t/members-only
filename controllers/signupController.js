@@ -32,7 +32,8 @@ exports.user_create_post = [
                     lname: req.body.lname,
                     username: req.body.username,
                     password: hashedPassword,
-                    memberStatus: false
+                    memberStatus: false,
+                    admin: req.body.admin_check
                 }).save(err => {
                     if (err) {
                         return next(err);
