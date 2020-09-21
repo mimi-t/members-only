@@ -38,7 +38,7 @@ exports.user_create_post = [
                     if (err) {
                         return next(err);
                     };
-                    res.redirect("/");
+                    res.redirect("/login");
                 });
             });
         }
