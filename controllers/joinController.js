@@ -1,7 +1,9 @@
 const User = require('../models/user');
 
 exports.user_join_get = function (req, res, next) {
-    res.render('join', { title: 'Join the Club' });
+    User.findById(res.locals.currentUser, function(err, result) {
+        res.render('join', { title: 'Join the Club', isAuthorised: result });
+    })
 }
 
 exports.user_join_post = function (req, res, next) {
