@@ -6,7 +6,8 @@ let UserSchema = new Schema({
     lname: { type: String, required: true },
     username: { type: String, required: true },
     password: { type: String, required: true },
-    member: { type: Boolean, default: false, required: true }
+    member: { type: Boolean, default: false, required: true },
+    admin: { type: Boolean, default: false }
 });
 
 
