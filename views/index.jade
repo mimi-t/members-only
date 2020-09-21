@@ -3,9 +3,11 @@ extends layout
 block content
   .jumbotron
     h1= title
-    p Welcome to #{title}, an exclusive message board.
     if currentUser
+      p Hi #{isAuthorised.fullname}, it's nice to see you again!
       a(class='btn btn-primary btn-lg' role='button' href='/create') Create new message
+    else
+      p Welcome to #{title}, an exclusive message board.
   
   each message in messages
     .card.mb-3
