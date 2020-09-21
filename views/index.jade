@@ -10,7 +10,7 @@ block content
   each message in messages
     .card.mb-3
       .card-header.d-flex.justify-content-between
-          if (isMember && isMember.member === true)
+          if (isMember && isMember.member)
             div
               p= message.author.fullname
             div
