@@ -9,6 +9,7 @@ const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
+const compression = require('compression');
 require('dotenv').config();
 
 //connect to database
