@@ -1,1 +1,2 @@
 # members-only
+A message board in which the authors and message dates are only visible to logged in users that are members. To become a member you must sign up, log in, then enter the passcode 'opensesame' on the Join page.
